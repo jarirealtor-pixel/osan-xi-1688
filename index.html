@@ -8,6 +8,12 @@
 <meta property="og:title" content="오산헤리티지자이 | 1차 계약금 500만원, 청약통장 없이 계약">
 <meta property="og:description" content="GS건설 오산헤리티지자이 1,783세대. 1차 계약금 500만원, 청약통장 없이 누구나 계약. 분양가·계약조건 상담 안내.">
 <meta name="theme-color" content="#0f2e2a">
+<script>
+/* 메인 키워드(?g=main) 유입: 한국시간 요일로 담당 페이지 자동 연결 · 화·목·토 = 현정(/h/), 그 외 = 은희(/) */
+(function(){try{var q=location.search;if(!/[?&]g=main(&|$)/.test(q))return;
+var d=new Date(Date.now()+9*3600*1000).getUTCDay();var hj=(d===2||d===4||d===6);
+var here="h";if(hj&&here!=="h")location.replace("/h/"+q);else if(!hj&&here!=="e")location.replace("/"+q);}catch(e){}})();
+</script>
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
@@ -62,6 +68,16 @@ h2 em{font-style:normal;color:var(--accent)}
 .key{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:10px 4px;text-align:center}
 .key b{display:block;font-size:15px;font-weight:800;line-height:1.25}
 .key span{display:block;font-size:11px;color:#c9d1dd;margin-top:2px;line-height:1.3}
+.gift{margin-top:14px;background:linear-gradient(90deg,#c0392b,#e05a48);color:#fff;border-radius:12px;padding:12px 14px;text-align:center;box-shadow:0 6px 18px rgba(192,57,43,.35)}
+.gift b{display:block;font-size:18px;font-weight:900;letter-spacing:-.02em}
+.gift small{display:block;font-size:11.5px;opacity:.9;margin-top:2px}
+.gifts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+.gifts .gift{margin:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:12px 8px}
+.gifts .gift b{font-size:15px;line-height:1.3}
+.gift .gi{font-size:24px;line-height:1}
+.gift.g1{background:linear-gradient(135deg,#5b1a2b,#8e2b45);box-shadow:0 6px 18px rgba(91,26,43,.35)}
+.gnote{font-size:11px;color:#c9d1dd;text-align:center;margin-top:6px}
+.final .gnote{color:#c4ccd8}
 .fine{font-size:10.5px;color:#9aa5b6;margin-top:10px;line-height:1.45}
 
 /* agent + quick form */
@@ -86,6 +102,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 
 .submit{margin-top:10px;font-size:18px;padding:17px}
 .submit[disabled]{opacity:.6;cursor:wait}
 .qcall{display:block;text-align:center;margin-top:12px;font-size:14px;font-weight:700;color:var(--dark);text-decoration:none}
+.dialnote{text-align:center;font-size:12px;color:var(--muted);margin-top:4px}
 .trust{display:flex;justify-content:center;gap:12px;margin-top:10px;font-size:11.5px;color:var(--muted)}
 .msg{margin-top:10px;font-size:14px;font-weight:700;text-align:center;display:none}
 .msg.err{color:var(--err);display:block}
@@ -214,6 +231,11 @@ footer summary{cursor:pointer;color:#c4ccd8}
       <div class="key"><b>트리플노선</b><span>도보권</span></div>
     </div>
     <p class="fine">84A 10층 이상 분양가 7억 8,300만원 기준(확장비 별도), 동·호수별 상이 · 전매는 당첨자발표일로부터 6개월 뒤 가능 · 세부 조건은 입주자 모집공고 기준</p>
+    <div class="gifts">
+      <div class="gift g1"><span class="gi">🍷</span><b>모델하우스 예약 방문 시<br>고급 와인 증정</b></div>
+      <div class="gift g2"><span class="gi">🎁</span><b>계약 시<br>상품권 100만원 증정</b></div>
+    </div>
+    <p class="gnote">예약 방문·계약 완료 고객 대상 · 증정 조건은 상담 시 안내</p>
   </div>
 </div>
 
@@ -235,6 +257,7 @@ footer summary{cursor:pointer;color:#c4ccd8}
         <p class="msg" role="status"></p>
         <div class="trust"><span>🔒 상담 외 사용 안 함</span><span>📋 입력 10초</span></div>
         <a class="qcall js-tel" href="#">📞 바로 통화하기 <span class="js-tel-text"></span></a>
+        <p class="dialnote">버튼을 누르면 담당 상담사 직통번호로 바로 연결됩니다</p>
       </form>
       <div class="done">
         <div class="ck">✓</div>
@@ -253,7 +276,7 @@ footer summary{cursor:pointer;color:#c4ccd8}
   </div>
 </div>
 
-<section>
+<section id="budget">
   <div class="wrap">
     <span class="ey">MY BUDGET</span>
     <h2>내 돈으로<br><em>계약 가능할까?</em></h2>
@@ -281,7 +304,7 @@ footer summary{cursor:pointer;color:#c4ccd8}
   </div>
 </section>
 
-<section>
+<section id="price">
   <div class="wrap">
     <span class="ey">PRICE CHECK</span>
     <h2>신축인데,<br>주변시세 대비 <em>1억 이상 저렴</em></h2>
@@ -298,7 +321,7 @@ footer summary{cursor:pointer;color:#c4ccd8}
   </div>
 </section>
 
-<section>
+<section id="location">
   <div class="wrap">
     <span class="ey">WHY HERITAGE XI</span>
     <h2>이 단지를<br>봐야 하는 <em>5가지</em> 이유</h2>
@@ -314,18 +337,18 @@ footer summary{cursor:pointer;color:#c4ccd8}
   </div>
 </section>
 
-<section>
+<section id="video">
   <div class="wrap">
     <span class="ey">30 SEC</span>
-    <h2>집착대공이 <em>집착한 집</em></h2>
+    <h2>북부대공이 고른 <em>영지</em></h2>
     <p class="sub">눌러서 이 페이지에서 바로 재생됩니다</p>
     <div class="vids one">
-      <button class="vid" data-id="HZAIfi9p3Kg" aria-label="영상 재생"><img loading="lazy" src="https://i.ytimg.com/vi/HZAIfi9p3Kg/hqdefault.jpg" alt=""><span class="pl"><i>▶</i></span><span class="cap">집착대공의 선택</span></button>
+      <button class="vid" data-id="2qiFuGoHjgE" aria-label="영상 재생"><img loading="lazy" src="https://i.ytimg.com/vi/2qiFuGoHjgE/hqdefault.jpg" alt=""><span class="pl"><i>▶</i></span><span class="cap">북부대공의 영지 확장</span></button>
     </div>
   </div>
 </section>
 
-<section>
+<section id="types">
   <div class="wrap">
     <span class="ey">UNIT TYPES</span>
     <h2>평면도·분양가,<br><em>평형별로 받아보기</em></h2>
@@ -341,7 +364,7 @@ footer summary{cursor:pointer;color:#c4ccd8}
       </tbody>
     </table>
     <p class="note">1블록 1,069세대 · 2블록 714세대 · 전체의 약 88%가 전용 85㎡ 이하</p>
-    <div class="visit">
+    <div class="visit" id="visit">
       <b>견본주택 방문</b>
       <p>경기도 오산시 양산동 194-1 · 오시기 전 연락 주시면 <b style="display:inline">대기 없이</b> 바로 안내해 드립니다.</p>
       <a class="btn" href="https://map.naver.com/p/search/%EC%98%A4%EC%82%B0%ED%97%A4%EB%A6%AC%ED%8B%B0%EC%A7%80%EC%9E%90%EC%9D%B4%20%EA%B2%AC%EB%B3%B8%EC%A3%BC%ED%83%9D" target="_blank" rel="noopener">네이버 지도로 길찾기</a>
@@ -354,6 +377,10 @@ footer summary{cursor:pointer;color:#c4ccd8}
     <span class="ey" style="color:var(--accent2)">LAST STEP</span>
     <h2>내 조건에 맞는 평형·금액,<br><em>상담으로 정확하게</em></h2>
     <p class="sub">동·호수와 층에 따라 금액이 달라, 남겨주시면 현장 상담사가 직접 연락드립니다.</p>
+    <div class="gifts" style="margin-top:16px">
+      <div class="gift g1"><span class="gi">🍷</span><b>예약 방문 시<br>고급 와인 증정</b></div>
+      <div class="gift g2"><span class="gi">🎁</span><b>계약 시<br>상품권 100만원</b></div>
+    </div>
     <div class="quick">
       <div class="agent"><div class="av">☎</div><div><b>오산헤리티지자이 현장 상담</b><span>남겨주시면 상담사가 직접 연락드립니다</span></div></div>
       <form class="lead" novalidate>
@@ -370,6 +397,7 @@ footer summary{cursor:pointer;color:#c4ccd8}
         <p class="msg" role="status"></p>
         <div class="trust"><span>🔒 상담 외 사용 안 함</span><span>📋 입력 10초</span></div>
         <a class="qcall js-tel" href="#">📞 바로 통화하기 <span class="js-tel-text"></span></a>
+        <p class="dialnote">버튼을 누르면 담당 상담사 직통번호로 바로 연결됩니다</p>
       </form>
       <div class="done">
         <div class="ck">✓</div>
@@ -391,7 +419,7 @@ footer summary{cursor:pointer;color:#c4ccd8}
 <footer>
   <div class="wrap">
     <b>오산헤리티지자이 분양 상담 안내</b><br>
-    분양 상담전화 <a class="js-tel js-tel-text" href="#">1599-8954</a><br>
+    분양 상담전화 <a class="js-tel js-tel-text" href="#">1688-7038</a> (누르면 담당 상담사 직통 연결)<br>
     광고대행 제이에이치테크 · 대표 박종영 · 사업자등록번호 298-47-00577
     <details id="privacy">
       <summary>개인정보 수집·이용 안내</summary>
@@ -416,14 +444,29 @@ footer summary{cursor:pointer;color:#c4ccd8}
 /* ===== 설정 ===== */
 const CONFIG = {
   SHEET_ENDPOINT: "https://script.google.com/macros/s/AKfycbxWzAwM7iIVnSmjOpAm5roO4OpLE_RKDX-rBACcwdmNBoXsg8YnDLuXwXFx-otNaL97pQ/exec",
-  PHONE: "1599-8954",
+  PHONE: "1688-7038",      // 화면 표시 번호
+  DIAL: "1551-9416",        // 눌렀을 때 실제로 걸리는 번호
   SITE: "오산헤리티지자이_1688",
   VARIANT: "B_contract"
 };
 /* ================ */
 
-const tel = CONFIG.PHONE.replace(/[^0-9]/g,"");
-document.querySelectorAll(".js-tel").forEach(a=>{ a.href = "tel:" + tel; a.addEventListener("click",()=>track("call")); });
+const tel = (CONFIG.DIAL || CONFIG.PHONE).replace(/[^0-9]/g,"");
+document.querySelectorAll(".js-tel").forEach(a=>{ a.href = "tel:" + tel; a.addEventListener("click",()=>{ track("call"); callPing(a); }); });
+/* 전화 버튼 클릭 → 시트 '전화클릭' 탭 + 슬랙 알림 */
+let lastPing = 0;
+function callPing(a){
+  try{
+    const now = Date.now(); if (now - lastPing < 3000) return; lastPing = now;
+    const q = new URLSearchParams(sessionStorage.getItem("lp_params") || location.search);
+    const where = a.closest(".fix") ? "하단 고정바" : a.closest(".quick") ? "상담폼 옆" : a.closest("footer") ? "맨 아래" : "상단";
+    const body = new URLSearchParams({ event:"call_click", site:CONFIG.SITE, phone_shown:CONFIG.PHONE, phone_dial:CONFIG.DIAL, where,
+      n_keyword: q.get("n_keyword") || q.get("n_query") || q.get("utm_term") || "",
+      n_media: q.get("n_media") || q.get("utm_source") || "", params: q.toString(), page: location.pathname });
+    if (!(navigator.sendBeacon && navigator.sendBeacon(CONFIG.SHEET_ENDPOINT, body)))
+      fetch(CONFIG.SHEET_ENDPOINT, { method:"POST", mode:"no-cors", keepalive:true, body });
+  }catch(e){}
+}
 document.querySelectorAll(".js-tel-text").forEach(a=>{ a.textContent = CONFIG.PHONE; });
 
 /* 유입 파라미터 보관 */
