@@ -1,0 +1,72 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>방문 예약</title>
+<style>:root{--dark:#0f2e2a;--acc:#c8763a;--line:#e4e6ea;--muted:#5d6574}*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;background:#f5f6f8;color:#1b1f27;line-height:1.55;word-break:keep-all}
+header{background:var(--dark);color:#fff;padding:16px 18px}header b{font-size:15px}header small{display:block;color:#c7d0dd;font-size:12px}
+.wrap{max-width:520px;margin:0 auto;padding:18px}.card{background:#fff;border-radius:16px;padding:20px;box-shadow:0 6px 24px rgba(0,0,0,.06)}
+h1{font-size:22px;color:var(--dark);letter-spacing:-.03em}.sub{color:var(--muted);font-size:14px;margin-top:4px}
+.btn{display:flex;align-items:center;justify-content:center;width:100%;font:inherit;font-size:18px;font-weight:800;border:0;border-radius:12px;padding:16px;text-decoration:none;cursor:pointer;margin-top:14px}
+.acc{background:var(--acc);color:#fff}.ghost{background:#fff;color:var(--dark);border:1.5px solid var(--dark)}
+.note{font-size:12px;color:var(--muted);margin-top:10px;text-align:center}
+label.l{display:block;font-size:13px;font-weight:700;margin:14px 0 6px}
+input[type=text],input[type=tel],input[type=date],select{width:100%;font:inherit;font-size:16px;padding:13px;border:1.5px solid #cfd3da;border-radius:10px;background:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:6px}.chips label{cursor:pointer}.chips input{position:absolute;opacity:0}
+.chips span{display:inline-block;border:1.5px solid #cfd3da;border-radius:999px;padding:8px 14px;font-size:14px;font-weight:600;background:#fff}
+.chips input:checked+span{background:var(--dark);border-color:var(--dark);color:#fff}
+.agree{display:flex;gap:8px;font-size:12.5px;color:#444;margin-top:14px}.agree input{width:18px;height:18px;flex:none}
+.msg{color:#c0392b;font-weight:700;text-align:center;margin-top:10px;font-size:14px}.hp{position:absolute;left:-9999px}
+.done{display:none;text-align:center}.done .ck{width:60px;height:60px;border-radius:50%;background:#1f7a4d;color:#fff;font-size:32px;display:grid;place-items:center;margin:0 auto 10px}
+.gift{margin-top:14px;background:linear-gradient(90deg,#c0392b,#e05a48);color:#fff;border-radius:12px;padding:10px;text-align:center;font-weight:800}
+.addr{margin-top:14px;background:#f5f6f8;border-radius:12px;padding:12px;font-size:14px}
+</style></head><body>
+<header><div class="wrap" style="padding:0"><b>오산헤리티지자이 분양 상담</b><small>GS건설 자이 · 오산 양산동 · 1,783세대</small></div></header>
+<div class="wrap"><div class="card" id="box">
+<form id="f" novalidate>
+<h1 id="ttl">견본주택 방문 예약</h1><p class="sub" id="sb">예약하신 시간에 대기 없이 바로 안내해 드립니다. 예약 방문 고객께는 고급 와인을 드립니다.</p>
+<label class="l">문의 내용</label>
+<div class="chips" id="tp">
+<label><input type="radio" name="topic" value="방문 예약" checked><span>방문 예약</span></label>
+<label><input type="radio" name="topic" value="잔여세대 안내"><span>잔여세대 안내</span></label>
+<label><input type="radio" name="topic" value="분양가·계약조건"><span>분양가·계약조건</span></label></div>
+<label class="l">이름</label><input type="text" name="name" autocomplete="name" maxlength="20">
+<label class="l">휴대폰 번호</label><input type="tel" name="phone" inputmode="numeric" autocomplete="tel" placeholder="010-0000-0000" maxlength="13">
+<label class="l">방문 희망일 (선택)</label><input type="date" name="date">
+<label class="l">희망 시간대 (선택)</label>
+<div class="chips"><label><input type="radio" name="slot" value="오전"><span>오전</span></label><label><input type="radio" name="slot" value="오후"><span>오후</span></label><label><input type="radio" name="slot" value="저녁"><span>저녁</span></label><label><input type="radio" name="slot" value="미정"><span>미정</span></label></div>
+<label class="l">관심 평형 (선택)</label>
+<div class="chips"><label><input type="checkbox" name="t" value="75㎡"><span>75㎡</span></label><label><input type="checkbox" name="t" value="84㎡"><span>84㎡</span></label><label><input type="checkbox" name="t" value="102㎡"><span>102㎡</span></label><label><input type="checkbox" name="t" value="124㎡"><span>124㎡</span></label><label><input type="checkbox" name="t" value="166㎡P"><span>166㎡P</span></label></div>
+<input type="text" name="website" class="hp" tabindex="-1" autocomplete="off">
+<label class="agree"><input type="checkbox" name="agree"><span>개인정보 수집·이용에 동의합니다 (수집: 이름·연락처·방문 희망 일정 / 목적: 분양 상담 및 방문 안내 / 보유: 1년 또는 삭제 요청 시까지)</span></label>
+<button class="btn acc" type="submit">예약 신청하기</button><p class="msg" id="m"></p>
+<a class="btn ghost tel" data-w="예약페이지 전화">📞 바로 전화 상담 1688-7038</a>
+<div class="gift">🍷 예약 방문 시 고급 와인 증정<br>🎁 계약 시 상품권 100만원 증정</div>
+<div class="addr"><b>견본주택</b> 경기도 오산시 양산동 194-1</div>
+</form>
+<div class="done" id="ok"><div class="ck">✓</div><h1>예약 신청 완료</h1><p class="sub">확인 후 담당 상담사가 바로 연락드립니다.</p>
+<a class="btn ghost" href="/h/">단지 정보 더 보기</a></div>
+</div><p class="note" style="margin-top:18px">분양 상담전화 1688-7038 · 광고대행 제이에이치테크 · 시행사·시공사의 공식 페이지가 아닙니다.</p></div>
+<script>
+const CFG={EP:"https://script.google.com/macros/s/AKfycbxWzAwM7iIVnSmjOpAm5roO4OpLE_RKDX-rBACcwdmNBoXsg8YnDLuXwXFx-otNaL97pQ/exec",SITE:"오산헤리티지자이_1688",SHOW:"1688-7038",DIAL:"1551-9416"};
+const q0=location.search;try{if(q0.length>1)sessionStorage.setItem("lp_params",q0)}catch(e){}
+function P(){let q=q0;try{q=sessionStorage.getItem("lp_params")||q}catch(e){}return new URLSearchParams(q)}
+function post(data){const p=P();const b=new URLSearchParams(Object.assign({site:CFG.SITE,
+ n_keyword:p.get("n_keyword")||p.get("n_query")||"",n_media:p.get("n_media")||"",n_ad_group:p.get("n_ad_group")||"",params:p.toString(),page:location.pathname,referrer:document.referrer||""},data));
+ if(!(navigator.sendBeacon&&navigator.sendBeacon(CFG.EP,b)))fetch(CFG.EP,{method:"POST",mode:"no-cors",keepalive:true,body:b});}
+document.querySelectorAll(".tel").forEach(a=>{a.href="tel:"+CFG.DIAL.replace(/\D/g,"");a.addEventListener("click",()=>post({event:"call_click",phone_shown:CFG.SHOW,phone_dial:CFG.DIAL,where:a.dataset.w||"서브페이지"}))});
+
+const f=document.getElementById("f"),m=document.getElementById("m");
+if(new URLSearchParams(location.search).get("t")==="remain"){document.querySelector('input[value="잔여세대 안내"]').checked=true;
+ document.getElementById("ttl").textContent="잔여세대 안내 신청";document.getElementById("sb").textContent="남겨주시면 담당 상담사가 직접 안내해 드립니다.";}
+f.date.min=new Date(Date.now()+9*36e5).toISOString().slice(0,10);
+f.phone.addEventListener("input",()=>{const d=f.phone.value.replace(/\D/g,"").slice(0,11);f.phone.value=d.length<4?d:d.length<8?d.slice(0,3)+"-"+d.slice(3):d.slice(0,3)+"-"+d.slice(3,d.length-4)+"-"+d.slice(-4)});
+f.addEventListener("submit",e=>{e.preventDefault();if(f.website.value)return;
+ const name=f.name.value.trim(),phone=f.phone.value.trim();
+ if(!name)return m.textContent="이름을 입력해 주세요.";
+ if(!/^01[016789]-?\d{3,4}-?\d{4}$/.test(phone))return m.textContent="휴대폰 번호를 정확히 입력해 주세요.";
+ if(!f.agree.checked)return m.textContent="개인정보 수집·이용에 동의해 주세요.";
+ const topic=f.querySelector("input[name=topic]:checked").value,slot=(f.querySelector("input[name=slot]:checked")||{}).value||"";
+ const types=[...f.querySelectorAll("input[name=t]:checked")].map(i=>i.value).join(", ");
+ const memo=[f.date.value&&("방문 희망일 "+f.date.value),slot&&("시간대 "+slot)].filter(Boolean).join(" / ");
+ post({name,phone,types,topic,memo,agree:"동의"});
+ f.style.display="none";document.getElementById("ok").style.display="block";});
+</script></body></html>

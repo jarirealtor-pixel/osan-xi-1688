@@ -1,0 +1,40 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>전화 상담 연결</title>
+<style>:root{--dark:#0f2e2a;--acc:#c8763a;--line:#e4e6ea;--muted:#5d6574}*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;background:#f5f6f8;color:#1b1f27;line-height:1.55;word-break:keep-all}
+header{background:var(--dark);color:#fff;padding:16px 18px}header b{font-size:15px}header small{display:block;color:#c7d0dd;font-size:12px}
+.wrap{max-width:520px;margin:0 auto;padding:18px}.card{background:#fff;border-radius:16px;padding:20px;box-shadow:0 6px 24px rgba(0,0,0,.06)}
+h1{font-size:22px;color:var(--dark);letter-spacing:-.03em}.sub{color:var(--muted);font-size:14px;margin-top:4px}
+.btn{display:flex;align-items:center;justify-content:center;width:100%;font:inherit;font-size:18px;font-weight:800;border:0;border-radius:12px;padding:16px;text-decoration:none;cursor:pointer;margin-top:14px}
+.acc{background:var(--acc);color:#fff}.ghost{background:#fff;color:var(--dark);border:1.5px solid var(--dark)}
+.note{font-size:12px;color:var(--muted);margin-top:10px;text-align:center}
+label.l{display:block;font-size:13px;font-weight:700;margin:14px 0 6px}
+input[type=text],input[type=tel],input[type=date],select{width:100%;font:inherit;font-size:16px;padding:13px;border:1.5px solid #cfd3da;border-radius:10px;background:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:6px}.chips label{cursor:pointer}.chips input{position:absolute;opacity:0}
+.chips span{display:inline-block;border:1.5px solid #cfd3da;border-radius:999px;padding:8px 14px;font-size:14px;font-weight:600;background:#fff}
+.chips input:checked+span{background:var(--dark);border-color:var(--dark);color:#fff}
+.agree{display:flex;gap:8px;font-size:12.5px;color:#444;margin-top:14px}.agree input{width:18px;height:18px;flex:none}
+.msg{color:#c0392b;font-weight:700;text-align:center;margin-top:10px;font-size:14px}.hp{position:absolute;left:-9999px}
+.done{display:none;text-align:center}.done .ck{width:60px;height:60px;border-radius:50%;background:#1f7a4d;color:#fff;font-size:32px;display:grid;place-items:center;margin:0 auto 10px}
+.gift{margin-top:14px;background:linear-gradient(90deg,#c0392b,#e05a48);color:#fff;border-radius:12px;padding:10px;text-align:center;font-weight:800}
+.addr{margin-top:14px;background:#f5f6f8;border-radius:12px;padding:12px;font-size:14px}
+</style></head><body>
+<header><div class="wrap" style="padding:0"><b>오산헤리티지자이 분양 상담</b><small>GS건설 자이 · 오산 양산동 · 1,783세대</small></div></header>
+<div class="wrap"><div class="card" style="text-align:center">
+<div style="font-size:54px">📞</div><h1>담당 상담사 연결 중…</h1>
+<p class="sub">전화 화면이 열리면 통화 버튼을 눌러주세요.<br>담당 상담사 직통번호로 바로 연결됩니다.</p>
+<a class="btn acc tel" data-w="서브링크 상담하기(자동)" id="go">📞 1688-7038 전화 연결</a>
+<a class="btn ghost" href="../reserve/">전화가 어려우면 방문·상담 예약</a>
+<div class="gift">🍷 예약 방문 시 고급 와인 증정<br>🎁 계약 시 상품권 100만원 증정</div>
+</div><p class="note" style="margin-top:18px">분양 상담전화 1688-7038 · 광고대행 제이에이치테크 · 시행사·시공사의 공식 페이지가 아닙니다.</p></div>
+<script>
+const CFG={EP:"https://script.google.com/macros/s/AKfycbxWzAwM7iIVnSmjOpAm5roO4OpLE_RKDX-rBACcwdmNBoXsg8YnDLuXwXFx-otNaL97pQ/exec",SITE:"오산헤리티지자이_1688",SHOW:"1688-7038",DIAL:"1551-9416"};
+const q0=location.search;try{if(q0.length>1)sessionStorage.setItem("lp_params",q0)}catch(e){}
+function P(){let q=q0;try{q=sessionStorage.getItem("lp_params")||q}catch(e){}return new URLSearchParams(q)}
+function post(data){const p=P();const b=new URLSearchParams(Object.assign({site:CFG.SITE,
+ n_keyword:p.get("n_keyword")||p.get("n_query")||"",n_media:p.get("n_media")||"",n_ad_group:p.get("n_ad_group")||"",params:p.toString(),page:location.pathname,referrer:document.referrer||""},data));
+ if(!(navigator.sendBeacon&&navigator.sendBeacon(CFG.EP,b)))fetch(CFG.EP,{method:"POST",mode:"no-cors",keepalive:true,body:b});}
+document.querySelectorAll(".tel").forEach(a=>{a.href="tel:"+CFG.DIAL.replace(/\D/g,"");a.addEventListener("click",()=>post({event:"call_click",phone_shown:CFG.SHOW,phone_dial:CFG.DIAL,where:a.dataset.w||"서브페이지"}))});
+
+setTimeout(()=>{post({event:"call_click",phone_shown:CFG.SHOW,phone_dial:CFG.DIAL,where:"서브링크 상담하기(자동)"});location.href="tel:"+CFG.DIAL.replace(/\D/g,"")},350);
+</script></body></html>
