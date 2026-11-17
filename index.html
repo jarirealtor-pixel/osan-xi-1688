@@ -208,6 +208,15 @@ footer summary{cursor:pointer;color:#c4ccd8}
 .fix .call{border:1.5px solid var(--dark);color:var(--dark)}
 .fix .go{background:var(--accent);color:#fff}
 
+
+/* 예약 현황 토스트 */
+.rtoast{position:fixed;left:50%;top:14px;z-index:60;transform:translate(-50%,-140%);transition:transform .45s cubic-bezier(.2,.8,.2,1);
+ display:flex;align-items:center;gap:10px;background:#fff;border-radius:999px;padding:11px 14px 11px 20px;box-shadow:0 8px 28px rgba(0,0,0,.22);
+ font-size:15px;font-weight:800;color:var(--ink);white-space:nowrap;max-width:calc(100vw - 24px)}
+.rtoast.on{transform:translate(-50%,0)}
+.rtoast b{color:#e0332b;font-size:18px;font-weight:900}
+.rtoast button{border:0;background:none;font-size:22px;line-height:1;color:#9aa5b6;cursor:pointer;padding:0 2px}
+@media (max-width:380px){.rtoast{font-size:13.5px}.rtoast b{font-size:16px}}
 /* expert panel */
 .nm2{display:inline-block;font-size:12px;font-weight:800;color:var(--accent2);border:1.5px solid var(--accent2);border-radius:6px;padding:1px 8px;margin-left:6px;vertical-align:1px}
 .xp{background:var(--dark);color:#fff;padding:6px 0 26px;border:0}
@@ -430,6 +439,7 @@ footer summary{cursor:pointer;color:#c4ccd8}
   </div>
 </section>
 
+
 <section class="final" id="final">
   <div class="wrap">
     <span class="ey" style="color:var(--accent2)">LAST STEP</span>
@@ -493,6 +503,9 @@ footer summary{cursor:pointer;color:#c4ccd8}
   </div>
 </footer>
 
+
+<div class="rtoast" id="rtoast" role="status"><span>현재까지 총 <b>309</b>명 모델하우스 방문예약 신청 완료!</span><button type="button" aria-label="닫기" onclick="this.parentNode.classList.remove('on')">×</button></div>
+<script>setTimeout(function(){var t=document.getElementById('rtoast');if(t)t.classList.add('on');setTimeout(function(){t&&t.classList.remove('on')},7000)},1200);</script>
 <div class="fix" id="fix"><div class="in">
   <a class="call js-tel" href="#">📞 전화</a>
   <a class="go js-goform" href="#top-form">상담 신청</a>
