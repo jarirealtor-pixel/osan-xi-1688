@@ -291,7 +291,7 @@ footer summary{cursor:pointer;color:#c4ccd8}
       <div class="gift g2"><span class="gi">🎁</span><b>계약 시<br>상품권 100만원 증정</b></div>
     </div>
     <p class="gnote">예약 방문·계약 완료 고객 대상 · 증정 조건은 상담 시 안내</p>
-    <a class="phchip" href="https://osan-xi-1551.vercel.app/h/ph/">👑 펜트하우스 계약 시 벤츠 자동차 선물 →</a>
+    <a class="phchip" href="https://osan-xi-1551.vercel.app/h/ph/">👑 펜트하우스 계약 시 벤츠 무상 제공 →</a>
   </div>
 </div>
 
@@ -471,7 +471,7 @@ footer summary{cursor:pointer;color:#c4ccd8}
     </div>
     <a class="phview" href="https://osan-xi-1551.vercel.app/h/ph/"><img src="https://osan-xi-1551.vercel.app/ph/ph_view.jpg" alt="펜트하우스 연출 이미지" loading="lazy"><span>연출 이미지 · 실제와 다름</span></a>
     <ul class="phl">
-      <li><b style="color:#E6CC94">계약 시 벤츠 E200 Exclusive 선물 증정 (약 7,750만원 상당, 제세공과금 별도)</b></li>
+      <li><b style="color:#E6CC94">분양 계약 시 벤츠 승용차 무상 제공</b></li>
       <li>윗집 없는 최상층, 우리 집만의 전용 옥외공간</li>
       <li>침실 5개 + 가족실 + 욕실 3개</li>
       <li>발코니 확장 등 모든 옵션 무상제공 (가전 유상옵션 제외)</li>
@@ -545,11 +545,7 @@ footer summary{cursor:pointer;color:#c4ccd8}
 
 
 <div class="rtoast" id="rtoast" role="status"><span>현재까지 총 <b>309</b>명 모델하우스 방문예약 신청 완료!</span><button type="button" aria-label="닫기" onclick="this.parentNode.classList.remove('on')">×</button></div>
-<script>(function(){var t=document.getElementById('rtoast');if(!t)return;var b=t.querySelector('b');
-function show(){t.classList.add('on');setTimeout(function(){t.classList.remove('on')},7000)}
-var done=false;function go(){if(done)return;done=true;setTimeout(show,300)}
-try{fetch("https://script.google.com/macros/s/AKfycbxWzAwM7iIVnSmjOpAm5roO4OpLE_RKDX-rBACcwdmNBoXsg8YnDLuXwXFx-otNaL97pQ/exec?action=count").then(function(r){return r.json()}).then(function(d){if(d&&d.count>=309)b.textContent=Number(d.count).toLocaleString();go()}).catch(go)}catch(e){go()}
-setTimeout(go,2500)})();</script>
+<script>setTimeout(function(){var t=document.getElementById('rtoast');if(t)t.classList.add('on');setTimeout(function(){t&&t.classList.remove('on')},7000)},1200);</script>
 <div class="fix" id="fix"><div class="in">
   <a class="call js-tel" href="#">📞 전화</a>
   <a class="go js-goform" href="#top-form">상담 신청</a>
